@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BC7DC6CF-E556-4D29-8A9E-E8019955E089</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Пулька</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EF1659ED0E02396950AD4F5293DD871293951F13</key>
+		<string>https://github.com/AlexeyPetrov95/Pulka.git</string>
+		<key>EF1659ED0E02396950AD4F5293DD871293951F13+++F74035B</key>
+		<string>https://github.com/AlexeyPetrov95/Pulka.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Пулька.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EF1659ED0E02396950AD4F5293DD871293951F13</key>
+		<string>../..</string>
+		<key>EF1659ED0E02396950AD4F5293DD871293951F13+++F74035B</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/AlexeyPetrov95/Pulka.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EF1659ED0E02396950AD4F5293DD871293951F13</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EF1659ED0E02396950AD4F5293DD871293951F13+++F74035B</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EF1659ED0E02396950AD4F5293DD871293951F13+++F74035B</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EF1659ED0E02396950AD4F5293DD871293951F13</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Pulka%207</string>
+		</dict>
+	</array>
+</dict>
+</plist>

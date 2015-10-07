@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F27" minimumToolsVersion="Xcode 4.3">
+    <entity name="CONTACTS_TABLES" representedClassName="CONTACTS_TABLES" syncable="YES">
+        <attribute name="contacts_iphone_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" attributeType="Transformable" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tables_id" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="contact_table_id" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DISHES" inverseName="id_contact_tables" inverseEntity="DISHES" syncable="YES"/>
+        <relationship name="id_tables" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TABLES" inverseName="tables_id_contacts_tables" inverseEntity="TABLES" syncable="YES"/>
+    </entity>
+    <entity name="DISHES" representedClassName="DISHES" syncable="YES">
+        <attribute name="contacts_tables_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sum_dish" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="tables_id" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="id_contact_tables" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CONTACTS_TABLES" inverseName="contact_table_id" inverseEntity="CONTACTS_TABLES" syncable="YES"/>
+        <relationship name="id_tables" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TABLES" inverseName="tables_id_dishes" inverseEntity="TABLES" syncable="YES"/>
+    </entity>
+    <entity name="FAVORITE_TABLES" representedClassName="FAVORITE_TABLES" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="table_id" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="id_tables" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TABLES" inverseName="tables_id_favorite_tables" inverseEntity="TABLES" syncable="YES"/>
+    </entity>
+    <entity name="HISTORY" representedClassName="HISTORY" syncable="YES">
+        <attribute name="tables_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="time_payment" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="id_tables" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TABLES" inverseName="tables_id_history" inverseEntity="TABLES" syncable="YES"/>
+    </entity>
+    <entity name="TABLES" representedClassName="TABLES" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sum_bill" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="sum_compensation" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="tables_id_contacts_tables" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CONTACTS_TABLES" inverseName="id_tables" inverseEntity="CONTACTS_TABLES" syncable="YES"/>
+        <relationship name="tables_id_dishes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DISHES" inverseName="id_tables" inverseEntity="DISHES" syncable="YES"/>
+        <relationship name="tables_id_favorite_tables" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FAVORITE_TABLES" inverseName="id_tables" inverseEntity="FAVORITE_TABLES" syncable="YES"/>
+        <relationship name="tables_id_history" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HISTORY" inverseName="id_tables" inverseEntity="HISTORY" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CONTACTS_TABLES" positionX="-10064" positionY="-5931" width="128" height="148"/>
+        <element name="DISHES" positionX="-10460" positionY="-5895" width="128" height="133"/>
+        <element name="FAVORITE_TABLES" positionX="-10019" positionY="-6237" width="128" height="90"/>
+        <element name="HISTORY" positionX="-10026" positionY="-6111" width="128" height="88"/>
+        <element name="TABLES" positionX="-10467" positionY="-6165" width="153" height="195"/>
+    </elements>
+</model>
