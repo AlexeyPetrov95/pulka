@@ -101,9 +101,7 @@ class TableController: UIViewController, ABPeoplePickerNavigationControllerDeleg
             textField.placeholder = "Стол"
         })
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: {(action) -> Void in // убрать клаву
-            alert = nil
-        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: {(action) -> Void in alert = nil }))
         
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
             let textField = alert.textFields![0].text!
