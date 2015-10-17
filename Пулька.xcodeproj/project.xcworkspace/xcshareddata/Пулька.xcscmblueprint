@@ -1,28 +1,28 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7764BABB2AB0FE348C1D44BACA6C2DFB84C08A2A+++0B0F8D3",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7764BABB2AB0FE348C1D44BACA6C2DFB84C08A2A+++984FC7A",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "EF1659ED0E02396950AD4F5293DD871293951F13+++F631C73" : 0,
-    "EF1659ED0E02396950AD4F5293DD871293951F13+++E7370A9" : 0,
-    "EF1659ED0E02396950AD4F5293DD871293951F13+++BBF82B4" : 0,
-    "EF1659ED0E02396950AD4F5293DD871293951F13+++7A7D109" : 0,
-    "7764BABB2AB0FE348C1D44BACA6C2DFB84C08A2A+++0B0F8D3" : 0,
-    "EF1659ED0E02396950AD4F5293DD871293951F13+++27F87DB" : 0,
-    "EF1659ED0E02396950AD4F5293DD871293951F13+++6FD701B" : 0,
-    "EF1659ED0E02396950AD4F5293DD871293951F13+++5E101AE" : 0
+    "EF1659ED0E02396950AD4F5293DD871293951F13+++CBE4E98" : 0,
+    "EF1659ED0E02396950AD4F5293DD871293951F13+++DD25A7E" : 0,
+    "EF1659ED0E02396950AD4F5293DD871293951F13+++D6B282C" : 0,
+    "EF1659ED0E02396950AD4F5293DD871293951F13+++3831D39" : 0,
+    "7764BABB2AB0FE348C1D44BACA6C2DFB84C08A2A+++984FC7A" : 0,
+    "EF1659ED0E02396950AD4F5293DD871293951F13+++7166AF0" : 0,
+    "EF1659ED0E02396950AD4F5293DD871293951F13+++EE44DA4" : 0,
+    "EF1659ED0E02396950AD4F5293DD871293951F13+++6A79555" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "BC7DC6CF-E556-4D29-8A9E-E8019955E089",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "EF1659ED0E02396950AD4F5293DD871293951F13+++F631C73" : "Pulka%2011\/",
-    "EF1659ED0E02396950AD4F5293DD871293951F13+++E7370A9" : "",
-    "EF1659ED0E02396950AD4F5293DD871293951F13+++BBF82B4" : "Pulka%2015\/",
-    "EF1659ED0E02396950AD4F5293DD871293951F13+++7A7D109" : "",
-    "7764BABB2AB0FE348C1D44BACA6C2DFB84C08A2A+++0B0F8D3" : "pulka\/",
-    "EF1659ED0E02396950AD4F5293DD871293951F13+++27F87DB" : "Pulka%207\/",
-    "EF1659ED0E02396950AD4F5293DD871293951F13+++6FD701B" : "Pulka%2012\/",
-    "EF1659ED0E02396950AD4F5293DD871293951F13+++5E101AE" : "Pulka%2010\/"
+    "EF1659ED0E02396950AD4F5293DD871293951F13+++CBE4E98" : "Pulka%2011\/",
+    "EF1659ED0E02396950AD4F5293DD871293951F13+++DD25A7E" : "Pulka%2010\/",
+    "EF1659ED0E02396950AD4F5293DD871293951F13+++D6B282C" : "Pulka%2015\/",
+    "EF1659ED0E02396950AD4F5293DD871293951F13+++3831D39" : "",
+    "7764BABB2AB0FE348C1D44BACA6C2DFB84C08A2A+++984FC7A" : "pulka\/",
+    "EF1659ED0E02396950AD4F5293DD871293951F13+++7166AF0" : "Pulka%207\/",
+    "EF1659ED0E02396950AD4F5293DD871293951F13+++EE44DA4" : "",
+    "EF1659ED0E02396950AD4F5293DD871293951F13+++6A79555" : "Pulka%2012\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Пулька",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -31,42 +31,42 @@
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/AlexeyPetrov95\/pulka.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7764BABB2AB0FE348C1D44BACA6C2DFB84C08A2A+++0B0F8D3"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7764BABB2AB0FE348C1D44BACA6C2DFB84C08A2A+++984FC7A"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/AlexeyPetrov95\/Pulka.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EF1659ED0E02396950AD4F5293DD871293951F13+++27F87DB"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EF1659ED0E02396950AD4F5293DD871293951F13+++3831D39"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/AlexeyPetrov95\/Pulka.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EF1659ED0E02396950AD4F5293DD871293951F13+++5E101AE"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EF1659ED0E02396950AD4F5293DD871293951F13+++6A79555"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/AlexeyPetrov95\/Pulka.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EF1659ED0E02396950AD4F5293DD871293951F13+++6FD701B"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EF1659ED0E02396950AD4F5293DD871293951F13+++7166AF0"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/AlexeyPetrov95\/Pulka.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EF1659ED0E02396950AD4F5293DD871293951F13+++7A7D109"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EF1659ED0E02396950AD4F5293DD871293951F13+++CBE4E98"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/AlexeyPetrov95\/Pulka.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EF1659ED0E02396950AD4F5293DD871293951F13+++BBF82B4"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EF1659ED0E02396950AD4F5293DD871293951F13+++D6B282C"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/AlexeyPetrov95\/Pulka.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EF1659ED0E02396950AD4F5293DD871293951F13+++E7370A9"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EF1659ED0E02396950AD4F5293DD871293951F13+++DD25A7E"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/AlexeyPetrov95\/Pulka.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EF1659ED0E02396950AD4F5293DD871293951F13+++F631C73"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EF1659ED0E02396950AD4F5293DD871293951F13+++EE44DA4"
     }
   ]
 }
