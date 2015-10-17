@@ -11,21 +11,24 @@ class TableController: UIViewController, ABPeoplePickerNavigationControllerDeleg
     var personPicker: ABPeoplePickerNavigationController
     var calc: CalculatorController? = nil
     
+    @IBOutlet weak var paySum: UILabel!
+    @IBOutlet weak var totalSumForTable: UILabel!
     @IBOutlet weak var buttonForDelete: UIButton!
     @IBOutlet var collection: UICollectionView!
+    
     var arrayOfCells = [CollectionViewCellContact!]()
     var model = DataInTable()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadDataInTable:", name: "ReloadDataInTable", object: nil)
         calc = storyboard?.instantiateViewControllerWithIdentifier("calc") as? CalculatorController
         self.addChildViewController(calc!)
         model.createFirstContact()
     }
     
     override func viewDidAppear(animated: Bool) {
-        collection.reloadData()
+        collection.reloadData()                                         // через notification  лучше!!
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -33,9 +36,8 @@ class TableController: UIViewController, ABPeoplePickerNavigationControllerDeleg
     }
     
     func addContact(sender:UIButton!) {
-        if  accessToAddressBook.status == .Authorized {
-            self.presentViewController(personPicker, animated: true, completion: nil)
-        } else { accessToAddressBook.displayCantAddContactAlert(self) }
+        if  accessToAddressBook.status == .Authorized { self.presentViewController(personPicker, animated: true, completion: nil) }
+        else { accessToAddressBook.displayCantAddContactAlert(self) }
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -52,7 +54,12 @@ class TableController: UIViewController, ABPeoplePickerNavigationControllerDeleg
             let phone: String = ABMultiValueCopyValueAtIndex(phones, index).takeRetainedValue() as! String
             let picTemp1 = ABPersonCopyImageDataWithFormat(person, kABPersonImageFormatThumbnail)
             model.appendNewContact(name, phone: phone, image: picTemp1)
-            // кальклятор не забыть впилить!
+            collection.reloadData()
+            
+            calc!.indexPath = model.data.count - 1
+            calc?.controllerIndex = "singeltone"
+            calc!.modelDataInTable = model
+            self.navigationController?.pushViewController(calc!, animated: true)
         }
     }
     
@@ -74,6 +81,7 @@ class TableController: UIViewController, ABPeoplePickerNavigationControllerDeleg
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cellContact", forIndexPath: indexPath) as! CollectionViewCellContact
             cell.customInit(self)
             arrayOfCells.append(cell)
+            
             let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: "longPressed:")
             cell.addGestureRecognizer(longPressRecognizer)            
 
@@ -92,7 +100,9 @@ class TableController: UIViewController, ABPeoplePickerNavigationControllerDeleg
     func addContactSum(sender:UIButton!){
         calc?.indexPath = sender.tag
         calc?.controllerIndex = "singeltone"
+        calc?.modelDataInTable = model
         self.navigationController?.pushViewController(calc!, animated: true)
+        collection.reloadData()
     }
     
     @IBAction func addToFavorite(sender: UIBarButtonItem) {
@@ -112,11 +122,18 @@ class TableController: UIViewController, ABPeoplePickerNavigationControllerDeleg
     }
     
     
+    func reloadDataInTable(notification:NSNotification){    /// можно во view did appear но создается ощущнеие что приложение лагает, но это не так!
+        collection.reloadData()
+        let tupel = model.getTotalSumAndPaySum()
+        totalSumForTable.text = "\(tupel.0)"
+        paySum.text = "\(tupel.1)"
+    }
+    
     
     /// ****************************** не критично, но еще можно подумать выносить или нет *****************************
     func longPressed(sender: UILongPressGestureRecognizer) {
         for eachCell in arrayOfCells {
-            eachCell.setAnimation(eachCell)
+            eachCell.setAnimation(eachCell) 
         }
         buttonForDelete.hidden = false
     }

@@ -174,9 +174,9 @@
 		1F808C411B8E2BFA008429DC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FA6C92581BD288740068D2B1 /* HistoryScreen */,
 				FA64E99E1BB3F87A004EAD63 /* FavoriteScreen */,
 				1F5517E11BA9D72300090F7B /* TableScreen */,
-				1F808C211B8E2410008429DC /* SecondViewController.swift */,
 				1F2AE3DE1BA5D8550004D4F8 /* CalculatorController.swift */,
 			);
 			name = Controller;
@@ -223,6 +223,14 @@
 				1F88A9171BB68F1900F87404 /* FavoriteTableController.swift */,
 			);
 			name = FavoriteScreen;
+			sourceTree = "<group>";
+		};
+		FA6C92581BD288740068D2B1 /* HistoryScreen */ = {
+			isa = PBXGroup;
+			children = (
+				1F808C211B8E2410008429DC /* SecondViewController.swift */,
+			);
+			name = HistoryScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -51,8 +51,11 @@ var power = 1.0 //сделать Int
 
 
 class CalculatorController: UIViewController {
-    var indexPath:Int? = nil
+    var indexPath:Int! = nil
     var controllerIndex:String = ""
+    var modelDataInTable: DataInTable! = nil
+    var modelDataContactsOnTheTabels: ContactsOnTheTabel! = nil
+    
     
 //    override func viewWillAppear(animated: Bool) {
 //        super.viewWillAppear(animated)
@@ -129,20 +132,19 @@ class CalculatorController: UIViewController {
         let sum = result.text
         let number = NSNumberFormatter().numberFromString(sum!)
         let doubleSum = number!.doubleValue
-        print("?")
         if (controllerIndex == "singeltone"){
-            if (doubleSum != 0 || SingletoneArray.singletone.arrayOfConatcs[indexPath!].sum.count == 0){
-                print("asd?")
-                SingletoneArray.singletone.arrayOfConatcs[indexPath!].sum.append(doubleSum)
+            if (doubleSum != 0 || modelDataInTable.data[indexPath].sum.count == 0){
+                modelDataInTable.data[indexPath].sum.append(doubleSum)
                 NSNotificationCenter.defaultCenter().postNotificationName("ReloadDataInTable", object: nil)
             }
         } else if (controllerIndex == "favorite") {
-            if (doubleSum != 0 || SingletoneArray.singletone.arrayForSum[indexPath!].sum.count == 0){
-                SingletoneArray.singletone.arrayForSum[indexPath!].sum.append(doubleSum)
+            if (doubleSum != 0 || modelDataContactsOnTheTabels.contacts[indexPath].sum.count == 0){
+                modelDataContactsOnTheTabels.contacts[indexPath].sum.append(doubleSum)
                 NSNotificationCenter.defaultCenter().postNotificationName("ReloadDataInFavorite", object: nil)
             }
         }
         self.clearAllCrear(nil)
+
         self.navigationController?.popViewControllerAnimated(true)
     }
     

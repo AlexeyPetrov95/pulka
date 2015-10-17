@@ -7,13 +7,7 @@ class CollectionViewCellContact: UICollectionViewCell {
     @IBOutlet var sum: UILabel!    
     
     @IBOutlet weak var deleteButton: UIButton!
-    
 
-       // addButtonOutlet.layer.cornerRadius = self.addButtonOutlet.frame.height / 2
-       // addButtonOutlet.clipsToBounds = true
-       // deleteButton.layer.cornerRadius = self.deleteButton.frame.height / 2
-       // deleteButton.hidden = true
-        
     
     func customInit (viewController: UIViewController){             //  небольшй костыль, надо бы сделать через обычный инит
         addButtonOutlet.layer.cornerRadius = self.addButtonOutlet.frame.height / 2
@@ -21,7 +15,6 @@ class CollectionViewCellContact: UICollectionViewCell {
         deleteButton.layer.cornerRadius = self.deleteButton.frame.height / 2
         addButtonOutlet.addTarget(viewController, action: "addContactSum:", forControlEvents: .TouchUpInside)
         deleteButton.addTarget(viewController, action: "deleteContact:", forControlEvents: .TouchUpInside)
-        // deleteButton.hidden = true
     }
     
 

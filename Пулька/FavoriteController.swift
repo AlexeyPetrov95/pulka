@@ -49,11 +49,9 @@ class FirstViewController: UIViewController,UITableViewDelegate, UITableViewData
         if segue.identifier == "favoriteDetail" {
             let viewController:FavoriteTableController = segue.destinationViewController as! FavoriteTableController
             let indexPath = self.tableView.indexPathForSelectedRow
-            
             let tableId = model.data[(indexPath?.row)!].valueForKey("table_id") as! String
             viewController.tableID = tableId
-            viewController.data = AccessToDB.loadData("CONTACTS_TABLES", predicate: "tables_id == %@", value: tableId)
-            viewController.getData()
+            viewController.model.setData(tableId)
         }
     }
     

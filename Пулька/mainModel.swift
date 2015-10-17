@@ -75,16 +75,91 @@ class DataInTable {
                     let image = data[i].image!
                     AccessToDB.saveDataToTables("CONTACTS_TABLES", attributes: ["contacts_iphone_id": phone, "image":image, "name":name, "tables_id":id])
                 }
-            } else {
-                AccessToDB.deleteItemInTable("TABLES", predicate: "table_id == @%", values: [id])
-            }
-
+            } else { AccessToDB.deleteItemInTable("TABLES", predicate: "table_id == @%", values: [id]) }
         }
+    }
+    
+    func getTotalSumAndPaySum() -> (Double, Double) {
+        var totalSum: Double = 0
+        var paySum: Double = 0
+        for person in data {
+            for sum in person.sum {
+                if person.name == "Я" { paySum += sum }
+                else { totalSum += sum }
+            }
+        }
+        paySum = totalSum - paySum
+        return (totalSum, paySum)
     }
 }
 
-class DataInFavorite {
-    var data = [Contact]()
+class ContactsOnTheTabel {
+    var data = [AnyObject]()        // массив для получение из бд
+    var contacts = [Contact]()      // массив для работы и вывода
+    
+    func appendNewContact(name: String, phone: String, image: Unmanaged<CFData>!, tableID: String) {
+        let theSameContact = findTheSameContact(name, phone: phone, tableID: tableID)
+        if !theSameContact {
+            let imageForContact = convertImage(image)
+            let newContact = Contact(name: name, phone: phone, sum: [], image: imageForContact)
+             AccessToDB.saveDataToTables("CONTACTS_TABLES", attributes: ["name":name, "contacts_iphone_id": phone, "image": imageForContact, "tables_id": tableID])
+            contacts.append(newContact)
+        }
+    }
+    
+    func findTheSameContact (name: String, phone: String, tableID: String) -> Bool {
+        let matches = AccessToDB.loadData("CONTACTS_TABLES", predicate: "(tables_id == %@) AND (name == %@) AND (contacts_iphone_id == %@)", value: [tableID, name, phone])
+        if matches.isEmpty { return false }
+        else { return true }
+    }
+    
+    func convertImage (image: Unmanaged<CFData>!) -> UIImage! {
+        if image != nil {
+            let picTemp2: NSObject? = Unmanaged<NSObject>.fromOpaque(image!.toOpaque()).takeRetainedValue()
+            if picTemp2 != nil { return UIImage(data: picTemp2! as! NSData)! }
+        }
+        return UIImage(named: "contact")!
+    }
+    
+    func setData (tableID: String) {
+        contacts = []
+        data =  AccessToDB.loadData("CONTACTS_TABLES", predicate: "tables_id == %@", value: tableID)
+        for person in data {
+            let name = person.valueForKey("name") as! String
+            let phone = person.valueForKey("contacts_iphone_id") as! String
+            let image = person.valueForKey("image") as! UIImage
+            let personContact = Contact(name: name, phone: phone, sum: [], image: image)
+            contacts.append(personContact)
+        }
+    }
+    
+    func getTotalSumForPerson (indexPath: Int) -> Double {
+        var totalSum:Double = 0
+        for sum in contacts[indexPath].sum {
+            totalSum += sum
+        }
+        return totalSum
+    }
+    
+    func deleteContact(indexPath: Int, tableID: String)  {
+        AccessToDB.deleteItemInTable("CONTACTS_TABLES", predicate: "(tables_id == %@) AND (name == %@) AND (contacts_iphone_id == %@)", values:[tableID, contacts[indexPath].name as String, contacts[indexPath].phone
+            as String])
+        contacts.removeAtIndex(indexPath)
+    }
+    
+    func getTotalSumAndPaySum() -> (Double, Double) {
+        var totalSum: Double = 0
+        var paySum: Double = 0
+        for person in contacts {
+            for sum in person.sum {
+                if person.name == "Я" { paySum += sum }
+                else { totalSum += sum }
+            }
+        }
+        paySum = totalSum - paySum
+        return (totalSum, paySum)
+    }
+
 }
 
 class DataInFavoriteTable {
@@ -111,7 +186,7 @@ class DataInFavoriteTable {
         data.removeAtIndex(index)
         AccessToDB.deleteTable(index)
     }
-    
+
     func adddFavorite (name: String) {
         let checkMatches = AccessToDB.loadData("TABLES", predicate: "name == %@", value: name)
         if checkMatches.count == 0 {
