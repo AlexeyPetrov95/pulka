@@ -7,6 +7,7 @@ class FavoriteTableController: UIViewController, UICollectionViewDelegate, UICol
     var accessToAddressBook = AddressBookAccess()
     let personPicker: ABPeoplePickerNavigationController
     var calc: CalculatorController? = nil
+    var edit: EditTableViewController? = nil
     
     @IBOutlet weak var buttonForDelete: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -22,6 +23,7 @@ class FavoriteTableController: UIViewController, UICollectionViewDelegate, UICol
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadDataInFavorite:", name: "ReloadDataInFavorite", object: nil)
         calc = storyboard?.instantiateViewControllerWithIdentifier("calc") as? CalculatorController
+        edit = storyboard?.instantiateViewControllerWithIdentifier("edit") as? EditTableViewController
         self.addChildViewController(calc!)
     }
     
@@ -86,8 +88,10 @@ class FavoriteTableController: UIViewController, UICollectionViewDelegate, UICol
             cell.name.text = model.contacts[indexPath.row].name
             cell.sum.text = SumFormatter.formatter.getRubleFormatt(model.getTotalSumForPerson(indexPath.row))
             cell.addButtonOutlet.layer.borderColor = UIColor(red: 84 / 255, green: 186 / 255, blue: 255 / 255, alpha: 1.0).CGColor
+            /// custom init
             cell.addButtonOutlet.tag = indexPath.row
             cell.deleteButton.tag = indexPath.row
+            cell.editButton.tag = indexPath.row
             cell.addButtonOutlet.setBackgroundImage(model.contacts[indexPath.row].image, forState: UIControlState.Normal)
             return cell
         }
@@ -126,6 +130,14 @@ class FavoriteTableController: UIViewController, UICollectionViewDelegate, UICol
         let indexPath = sender.tag
         model.deleteContact(indexPath, tableID: tableID)
         collectionView.reloadData()
+    }
+    
+    func editContact (sender: UIButton!) {
+        self.navigationController?.pushViewController(edit!, animated: true)
+        edit?.row = sender.tag
+        //edit?.model = model
+       // edit?.getObjectType()
+
     }
     
     @IBAction func deleteIsAlreadyDone(sender: UIButton?) {

@@ -6,6 +6,7 @@ class CollectionViewCellContact: UICollectionViewCell {
     @IBOutlet var name: UILabel!
     @IBOutlet var sum: UILabel!    
     
+    @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
 
     
@@ -13,8 +14,10 @@ class CollectionViewCellContact: UICollectionViewCell {
         addButtonOutlet.layer.cornerRadius = self.addButtonOutlet.frame.height / 2
         addButtonOutlet.clipsToBounds = true
         deleteButton.layer.cornerRadius = self.deleteButton.frame.height / 2
+        editButton.layer.cornerRadius = self.editButton.frame.height / 2
         addButtonOutlet.addTarget(viewController, action: "addContactSum:", forControlEvents: .TouchUpInside)
         deleteButton.addTarget(viewController, action: "deleteContact:", forControlEvents: .TouchUpInside)
+        editButton.addTarget(viewController, action: "editContact:", forControlEvents: .TouchUpInside)
     }
     
 
@@ -30,6 +33,7 @@ class CollectionViewCellContact: UICollectionViewCell {
         cell.addButtonOutlet.layer.addAnimation(shackeAnimation, forKey: "transform.rotation")
         cell.deleteButton.layer.addAnimation(shackeAnimation, forKey: "transform.rotation")
         cell.deleteButton.hidden = false
+        cell.editButton.hidden = false
     }
 
 }

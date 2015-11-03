@@ -67,9 +67,7 @@ class FirstViewController: UIViewController,UITableViewDelegate, UITableViewData
             self.tableView.reloadData()
             alert = nil
         }))
-
         self.presentViewController(alert, animated: true, completion: nil)
-
     }
 }
 

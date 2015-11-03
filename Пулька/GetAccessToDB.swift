@@ -161,9 +161,7 @@ class AccessToDB {
     }
     
     static func deleteTable(index:Int) {
- //       var data:[AnyObject] = []
         var id:String = String()
-        
         var request = NSFetchRequest(entityName: "FAVORITE_TABLES")
         
         do {

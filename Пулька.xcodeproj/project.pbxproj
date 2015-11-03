@@ -24,6 +24,7 @@
 		1FBA8E681BAB11C8004C749B /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA8E661BAB11C7004C749B /* DataModel.xcdatamodeld */; };
 		1FC86AD21B921474003883F9 /* ViewForContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC86AD11B921474003883F9 /* ViewForContacts.swift */; };
 		FA110F1B1BC538D300DCAECA /* mainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA110F1A1BC538D300DCAECA /* mainModel.swift */; };
+		FA4B1D7C1BDE3634008C797C /* EditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B1D7B1BDE3634008C797C /* EditTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		FA64E98C1BB2CF74004EAD63 /* SomeClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64E98B1BB2CF74004EAD63 /* SomeClass.swift */; };
 		FA64E98F1BB2CF80004EAD63 /* GetAccessToDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64E98D1BB2CF80004EAD63 /* GetAccessToDB.swift */; };
 		FA64E9901BB2CF80004EAD63 /* GetAddressBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64E98E1BB2CF80004EAD63 /* GetAddressBook.swift */; };
@@ -66,6 +67,7 @@
 		1FBA8E671BAB11C7004C749B /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		1FC86AD11B921474003883F9 /* ViewForContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewForContacts.swift; sourceTree = "<group>"; };
 		FA110F1A1BC538D300DCAECA /* mainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainModel.swift; sourceTree = "<group>"; };
+		FA4B1D7B1BDE3634008C797C /* EditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTableViewController.swift; sourceTree = "<group>"; };
 		FA64E98B1BB2CF74004EAD63 /* SomeClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SomeClass.swift; sourceTree = "<group>"; };
 		FA64E98D1BB2CF80004EAD63 /* GetAccessToDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAccessToDB.swift; sourceTree = "<group>"; };
 		FA64E98E1BB2CF80004EAD63 /* GetAddressBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAddressBook.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 		1F808C411B8E2BFA008429DC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FA4B1D7A1BDE360C008C797C /* editController */,
 				FA6C92581BD288740068D2B1 /* HistoryScreen */,
 				FA64E99E1BB3F87A004EAD63 /* FavoriteScreen */,
 				1F5517E11BA9D72300090F7B /* TableScreen */,
@@ -190,6 +193,14 @@
 				1FC86AD11B921474003883F9 /* ViewForContacts.swift */,
 			);
 			name = "CustomView and Cell";
+			sourceTree = "<group>";
+		};
+		FA4B1D7A1BDE360C008C797C /* editController */ = {
+			isa = PBXGroup;
+			children = (
+				FA4B1D7B1BDE3634008C797C /* EditTableViewController.swift */,
+			);
+			name = editController;
 			sourceTree = "<group>";
 		};
 		FA64E98A1BB2CEBB004EAD63 /* model */ = {
@@ -352,6 +363,7 @@
 				1F5517E31BA9DC8F00090F7B /* CollectionViewCellContact.swift in Sources */,
 				FA64E98C1BB2CF74004EAD63 /* SomeClass.swift in Sources */,
 				1FBA8E681BAB11C8004C749B /* DataModel.xcdatamodeld in Sources */,
+				FA4B1D7C1BDE3634008C797C /* EditTableViewController.swift in Sources */,
 				1F808C201B8E2410008429DC /* FavoriteController.swift in Sources */,
 				FA110F1B1BC538D300DCAECA /* mainModel.swift in Sources */,
 				FA64E99C1BB2D07D004EAD63 /* HISTORY.swift in Sources */,

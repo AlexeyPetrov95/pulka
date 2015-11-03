@@ -10,6 +10,7 @@ class TableController: UIViewController, ABPeoplePickerNavigationControllerDeleg
     var accessToAddressBook = AddressBookAccess()
     var personPicker: ABPeoplePickerNavigationController
     var calc: CalculatorController? = nil
+    var edit: EditTableViewController? = nil
     
     @IBOutlet weak var paySum: UILabel!
     @IBOutlet weak var totalSumForTable: UILabel!
@@ -23,12 +24,14 @@ class TableController: UIViewController, ABPeoplePickerNavigationControllerDeleg
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadDataInTable:", name: "ReloadDataInTable", object: nil)
         calc = storyboard?.instantiateViewControllerWithIdentifier("calc") as? CalculatorController
+        edit = storyboard?.instantiateViewControllerWithIdentifier("edit") as? EditTableViewController
         self.addChildViewController(calc!)
+        self.addChildViewController(edit!)
         model.createFirstContact()
     }
     
     override func viewDidAppear(animated: Bool) {
-        collection.reloadData()                                         // через notification  лучше!!
+        collection.reloadData()
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -56,7 +59,7 @@ class TableController: UIViewController, ABPeoplePickerNavigationControllerDeleg
             model.appendNewContact(name, phone: phone, image: picTemp1)
             collection.reloadData()
             
-            calc!.indexPath = model.data.count - 1
+            calc!.indexPath = model.contacts.count - 1
             calc?.controllerIndex = "singeltone"
             calc!.modelDataInTable = model
             self.navigationController?.pushViewController(calc!, animated: true)
@@ -93,6 +96,7 @@ class TableController: UIViewController, ABPeoplePickerNavigationControllerDeleg
             cell.addButtonOutlet.layer.borderColor = UIColor(red: 84 / 255, green: 186 / 255, blue: 255 / 255, alpha: 1.0).CGColor
             cell.addButtonOutlet.tag = indexPath.row
             cell.deleteButton.tag = indexPath.row
+            cell.editButton.tag = indexPath.row
             return cell
         }
     }
@@ -122,7 +126,7 @@ class TableController: UIViewController, ABPeoplePickerNavigationControllerDeleg
     }
     
     
-    func reloadDataInTable(notification:NSNotification){    /// можно во view did appear но создается ощущнеие что приложение лагает, но это не так!
+    func reloadDataInTable(notification:NSNotification){
         collection.reloadData()
         let tupel = model.getTotalSumAndPaySum()
         totalSumForTable.text = "\(tupel.0)"
@@ -149,8 +153,18 @@ class TableController: UIViewController, ABPeoplePickerNavigationControllerDeleg
             eachCell.addButtonOutlet.layer.removeAllAnimations()
             eachCell.deleteButton.layer.removeAllAnimations()
             eachCell.deleteButton.hidden = true
+            eachCell.editButton.hidden = true
         }
         buttonForDelete.hidden = true
+    }
+    
+    func editContact (sender: UIButton){
+        edit?.row = sender.tag
+        edit?.model = model as DataInTable
+     //   edit?.getObjectType()
+        self.navigationController?.pushViewController(edit!, animated: true)
+      //  self.navigationController?.presentViewController(edit!, animated: true, completion: nil)
+        
     }
     /// *****************************************************************************************************************
     

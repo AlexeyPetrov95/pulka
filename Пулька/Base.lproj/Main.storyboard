@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9046" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -173,6 +173,11 @@
                                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <state key="normal" backgroundImage="deleteButton"/>
                                                 </button>
+                                                <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRr-XP-4Tv">
+                                                    <rect key="frame" x="57" y="48" width="20" height="20"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" red="0.30844147275305284" green="0.14580367424019872" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </button>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -200,6 +205,7 @@
                                         <connections>
                                             <outlet property="addButtonOutlet" destination="zND-DY-JhQ" id="BHK-Oe-IuX"/>
                                             <outlet property="deleteButton" destination="FZe-lw-cZO" id="TQa-2q-wbJ"/>
+                                            <outlet property="editButton" destination="jRr-XP-4Tv" id="6H2-1G-wy7"/>
                                             <outlet property="name" destination="cwB-JH-vU5" id="6K7-NZ-paj"/>
                                             <outlet property="sum" destination="0uf-4D-XGY" id="4Gi-1Y-lVE"/>
                                         </connections>
@@ -298,6 +304,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1362" y="-820"/>
+        </scene>
+        <!--Edit Table View Controller-->
+        <scene sceneID="lRo-9W-UoQ">
+            <objects>
+                <tableViewController storyboardIdentifier="edit" modalTransitionStyle="partialCurl" hidesBottomBarWhenPushed="YES" id="2fc-wM-rUF" customClass="EditTableViewController" customModule="Пулька" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="dmt-Dy-Cww">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Sum" textLabel="IuO-U3-zGD" rowHeight="60" style="IBUITableViewCellStyleDefault" id="swm-bz-T9X">
+                                <rect key="frame" x="0.0" y="28" width="600" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="swm-bz-T9X" id="qvK-vf-LuS">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IuO-U3-zGD">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="59"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2fc-wM-rUF" id="4db-Wu-vPK"/>
+                            <outlet property="delegate" destination="2fc-wM-rUF" id="Ds4-1J-gtl"/>
+                        </connections>
+                    </tableView>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EWg-Hf-NRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2088" y="-365"/>
         </scene>
         <!--Имя стола-->
         <scene sceneID="Ppd-Vf-3gG">
@@ -419,6 +467,21 @@
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" backgroundImage="deleteButton"/>
                                                 </button>
+                                                <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6z-KO-m5i">
+                                                    <rect key="frame" x="57" y="48" width="20" height="20"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" red="0.3084414728" green="0.14580367420000001" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </button>
+                                                <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AoT-B8-oAx">
+                                                    <rect key="frame" x="57" y="48" width="20" height="20"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" red="0.3084414728" green="0.14580367420000001" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </button>
+                                                <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clO-tK-Scy">
+                                                    <rect key="frame" x="57" y="48" width="20" height="20"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" red="0.3084414728" green="0.14580367420000001" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </button>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -446,6 +509,7 @@
                                         <connections>
                                             <outlet property="addButtonOutlet" destination="1PC-M4-OSz" id="gQc-7X-001"/>
                                             <outlet property="deleteButton" destination="7gl-BX-gpz" id="gNr-ky-adI"/>
+                                            <outlet property="editButton" destination="l6z-KO-m5i" id="1Fw-xb-PWh"/>
                                             <outlet property="name" destination="yDk-pF-1Z1" id="atB-3u-4m2"/>
                                             <outlet property="sum" destination="M5z-ew-ukl" id="qrH-wi-egR"/>
                                         </connections>

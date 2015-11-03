@@ -133,8 +133,9 @@ class CalculatorController: UIViewController {
         let number = NSNumberFormatter().numberFromString(sum!)
         let doubleSum = number!.doubleValue
         if (controllerIndex == "singeltone"){
-            if (doubleSum != 0 || modelDataInTable.data[indexPath].sum.count == 0){
-                modelDataInTable.data[indexPath].sum.append(doubleSum)
+            if (doubleSum != 0 || modelDataInTable.contacts[indexPath].sum.count == 0){
+                modelDataInTable.contacts[indexPath].sum.append(doubleSum)
+                print(doubleSum)
                 NSNotificationCenter.defaultCenter().postNotificationName("ReloadDataInTable", object: nil)
             }
         } else if (controllerIndex == "favorite") {

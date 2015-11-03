@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x41f;&#x443;&#x43b;&#x44c;&#x43a;&#x430;/TablesController.swift"
-            timestampString = "466782165.564984"
+            timestampString = "467552946.454916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209">
+            startingLineNumber = "223"
+            endingLineNumber = "223">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -134,11 +134,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x41f;&#x443;&#x43b;&#x44c;&#x43a;&#x430;/CollectionViewCellContact.swift"
-            timestampString = "466777945.794642"
+            timestampString = "467548592.734297"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "setAnimation(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -244,11 +244,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x41f;&#x443;&#x43b;&#x44c;&#x43a;&#x430;/mainModel.swift"
-            timestampString = "465912271.452362"
+            timestampString = "467555076.807434"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "DataInTable"
             landmarkType = "3">
          </BreakpointContent>
@@ -260,39 +260,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x41f;&#x443;&#x43b;&#x44c;&#x43a;&#x430;/mainModel.swift"
-            timestampString = "465913203.357332"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "addFavorite(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x41f;&#x443;&#x43b;&#x44c;&#x43a;&#x430;/mainModel.swift"
-            timestampString = "465913241.159092"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "addFavorite(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x41f;&#x443;&#x43b;&#x44c;&#x43a;&#x430;/mainModel.swift"
-            timestampString = "465913380.479923"
+            timestampString = "467555076.807434"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
@@ -307,12 +275,44 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "&#x41f;&#x443;&#x43b;&#x44c;&#x43a;&#x430;/TablesController.swift"
-            timestampString = "466781299.518264"
+            filePath = "&#x41f;&#x443;&#x43b;&#x44c;&#x43a;&#x430;/mainModel.swift"
+            timestampString = "467555076.807434"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "addFavorite(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x41f;&#x443;&#x43b;&#x44c;&#x43a;&#x430;/mainModel.swift"
+            timestampString = "467555076.807434"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "addFavorite(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x41f;&#x443;&#x43b;&#x44c;&#x43a;&#x430;/TablesController.swift"
+            timestampString = "467549935.320281"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "TableController"
             landmarkType = "3">
          </BreakpointContent>
@@ -356,13 +356,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x41f;&#x443;&#x43b;&#x44c;&#x43a;&#x430;/CalculatorController.swift"
-            timestampString = "466782202.990456"
+            timestampString = "467552150.867543"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "addSum(_:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x41f;&#x443;&#x43b;&#x44c;&#x43a;&#x430;/TablesController.swift"
+            timestampString = "467554229.38759"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "TableController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
