@@ -160,11 +160,9 @@ class TableController: UIViewController, ABPeoplePickerNavigationControllerDeleg
     
     func editContact (sender: UIButton){
         edit?.row = sender.tag
-        edit?.model = model as DataInTable
-     //   edit?.getObjectType()
+        edit?.object = (model, nil)
+        edit?.tableView.reloadData()
         self.navigationController?.pushViewController(edit!, animated: true)
-      //  self.navigationController?.presentViewController(edit!, animated: true, completion: nil)
-        
     }
     /// *****************************************************************************************************************
     

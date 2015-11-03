@@ -133,11 +133,10 @@ class FavoriteTableController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func editContact (sender: UIButton!) {
-        self.navigationController?.pushViewController(edit!, animated: true)
         edit?.row = sender.tag
-        //edit?.model = model
-       // edit?.getObjectType()
-
+        edit?.object = (nil, model)
+        edit?.tableView.reloadData()
+        self.navigationController?.pushViewController(edit!, animated: true)
     }
     
     @IBAction func deleteIsAlreadyDone(sender: UIButton?) {
@@ -145,6 +144,7 @@ class FavoriteTableController: UIViewController, UICollectionViewDelegate, UICol
             eachCell.addButtonOutlet.layer.removeAllAnimations()
             eachCell.deleteButton.layer.removeAllAnimations()
             eachCell.deleteButton.hidden = true
+            eachCell.editButton.hidden = true
         }
         buttonForDelete.hidden = true
     }

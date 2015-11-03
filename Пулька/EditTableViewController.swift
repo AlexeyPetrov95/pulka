@@ -1,57 +1,41 @@
-//
-//  EditTableViewController.swift
-//  Пулька
-//
-//  Created by Alex on 26.10.15.
-//  Copyright © 2015 Алексей. All rights reserved.
-//
 
 import UIKit
 
 class EditTableViewController: UITableViewController {
     
     var row: Int! = nil
-    var model: AnyObject? = nil
+    var model: ModelData! = nil
+    var object: (DataInTable?, ContactsOnTheTabel?) = (nil, nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-    override func viewDidAppear(animated: Bool) {
-        tableView.reloadData()
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
-    
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        
-        return 0
+        if object.0 != nil { return (object.0?.contacts[row].sum.count)! }
+        else {return (object.1?.contacts[row].sum.count)!}
     }
     
-    
-    //override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-      //  let cell = tableView.dequeueReusableCellWithIdentifier("Sum", forIndexPath: indexPath)
-     //   cell.textLabel?.text = SumFormatter.formatter.getRubleFormatt(model.data[row].sum[indexPath.row])
-       // return cell
-   // }
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Sum", forIndexPath: indexPath)
+        if object.0 != nil{
+            cell.textLabel?.text = SumFormatter.formatter.getRubleFormatt((object.0?.contacts[row].sum[indexPath.row])!)
+        } else {
+            cell.textLabel?.text = SumFormatter.formatter.getRubleFormatt((object.1?.contacts[row].sum[indexPath.row])!)
+        }
+        return cell
+    }
 
 
     /*
@@ -64,14 +48,19 @@ class EditTableViewController: UITableViewController {
 
     
     // Override to support editing the table view.
-    /* override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            // Delete the row from the data source
-            model.data[row].sum.removeAtIndex(indexPath.row)
+            if object.0 != nil {
+                object.0!.contacts[row].sum.removeAtIndex(indexPath.row)
+                NSNotificationCenter.defaultCenter().postNotificationName("ReloadDataInTable", object: nil)
+            }
+            else {
+                object.1!.contacts[row].sum.removeAtIndex(indexPath.row)
+                NSNotificationCenter.defaultCenter().postNotificationName("ReloadDataInFavorite", object: nil)
+            }
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            NSNotificationCenter.defaultCenter().postNotificationName("ReloadDataInTable", object: nil)
         }
-    }*/
+    }
     
     /*
     // Override to support rearranging the table view.

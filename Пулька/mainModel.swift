@@ -8,10 +8,22 @@ struct Contact {
     var image: UIImage!
 }
 
+protocol ModelData {
+    func convertImage (image: Unmanaged<CFData>!) -> UIImage!
+}
 
-class DataInTable {
-    var contacts = [Contact]()
-    
+extension ModelData {
+    func convertImage (image: Unmanaged<CFData>!) -> UIImage! {
+        if image != nil {
+            let picTemp2: NSObject? = Unmanaged<NSObject>.fromOpaque(image!.toOpaque()).takeRetainedValue()
+            if picTemp2 != nil { return UIImage(data: picTemp2! as! NSData)! }
+        }
+        return UIImage(named: "contact")!
+    }
+}
+
+class DataInTable: ModelData {
+   var contacts = [Contact]()
     func createFirstContact() {
         let image = UIImage(named: "contact")
         let me = Contact(name: "Я", phone: "", sum: [], image: image)
@@ -32,14 +44,6 @@ class DataInTable {
             if person.name == name && person.phone == phone { return true }
         }
         return false
-    }
-    
-    func convertImage (image: Unmanaged<CFData>!) -> UIImage! {
-        if image != nil {
-            let picTemp2: NSObject? = Unmanaged<NSObject>.fromOpaque(image!.toOpaque()).takeRetainedValue()
-            if picTemp2 != nil { return UIImage(data: picTemp2! as! NSData)! }
-        }
-        return UIImage(named: "contact")!
     }
     
     func getCountOfPerson() -> Int {
@@ -94,7 +98,7 @@ class DataInTable {
     }
 }
 
-class ContactsOnTheTabel {
+class ContactsOnTheTabel: ModelData {
     var data = [AnyObject]()        // массив для получение из бд
     var contacts = [Contact]()      // массив для работы и вывода
     
@@ -112,14 +116,6 @@ class ContactsOnTheTabel {
         let matches = AccessToDB.loadData("CONTACTS_TABLES", predicate: "(tables_id == %@) AND (name == %@) AND (contacts_iphone_id == %@)", value: [tableID, name, phone])
         if matches.isEmpty { return false }
         else { return true }
-    }
-    
-    func convertImage (image: Unmanaged<CFData>!) -> UIImage! {
-        if image != nil {
-            let picTemp2: NSObject? = Unmanaged<NSObject>.fromOpaque(image!.toOpaque()).takeRetainedValue()
-            if picTemp2 != nil { return UIImage(data: picTemp2! as! NSData)! }
-        }
-        return UIImage(named: "contact")!
     }
     
     func setData (tableID: String) {
